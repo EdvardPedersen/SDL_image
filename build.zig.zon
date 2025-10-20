@@ -1,0 +1,18 @@
+.{
+    .name = .SDL_image,
+    .version = "0.0.0",
+    .dependencies = .{
+        .sdl = .{
+            .url = "git+https://github.com/castholm/SDL.git#1d4b8dcc03bd216712b55318b4ad2402b5511490",
+            .hash = "sdl-0.3.1+3.2.24-7uIn9L9AfwFQf90JcTh3Slw__ZA8SEomk6fQI9F8ItY0",
+        },
+    },
+    .fingerprint = 0x7d6df367a49af608, // Changing this has security and trust implications.
+    .minimum_zig_version = "0.16.0-dev.747+493ad58ff",
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "SDL_image",
+    },
+}
