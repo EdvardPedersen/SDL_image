@@ -26,6 +26,11 @@ pub fn build(b: *std.Build) void {
         .files = &.{
             "src/IMG.c",
             "src/IMG_bmp.c",
+            "src/IMG_gif.c",
+            "src/IMG_tga.c",
+            "src/IMG_avif.c",
+            "src/IMG_jpg.c",
+            "src/IMG_lbm.c",
         }});
     b.installArtifact(lib);
 }
