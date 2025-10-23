@@ -8,23 +8,24 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
     const sdl_lib = sdl_dep.artifact("SDL3");
-    const lib_mod = b.createModule(.{
-        .target = target,
-        .optimize = optimize,
-    });
+
+
+    const lib_dep = b.dependency("SDL_image", .{});
     const lib = b.addLibrary(.{
         .linkage = .static,
         .name = "SDL_image",
-        .root_module = lib_mod,
+        .root_module = b.addModule("SDL_image_2", .{.target = target, .optimize = optimize}),
     });
     lib.root_module.linkLibrary(sdl_lib);
 
-    lib.addIncludePath(b.path("SDL_image/include"));
-    lib.addIncludePath(b.path("SDL_image/src"));
-    lib.addCSourceFiles(.{.files = &.{
-        "SDL_image/src/IMG.c",
-        "SDL_image/src/IMG_bmp.c",
-    }});
-    lib.installHeader(b.path("SDL_image/include/SDL3_image/SDL_image.h"), "SDL3_image/SDL_image.h");
+    lib.addIncludePath(lib_dep.path("include"));
+    lib.addIncludePath(lib_dep.path("src"));
+    lib.installHeader(lib_dep.path("include/SDL3_image/SDL_image.h"), "SDL3_image/SDL_image.h");
+    lib.root_module.addCSourceFiles(.{
+        .root = lib_dep.path(""), 
+        .files = &.{
+            "src/IMG.c",
+            "src/IMG_bmp.c",
+        }});
     b.installArtifact(lib);
 }
