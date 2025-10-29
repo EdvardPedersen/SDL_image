@@ -31,6 +31,18 @@ pub fn build(b: *std.Build) void {
             "src/IMG_avif.c",
             "src/IMG_jpg.c",
             "src/IMG_lbm.c",
+            "src/IMG_jxl.c",
+            "src/IMG_pcx.c",
+            "src/IMG_png.c",
+            "src/IMG_pnm.c",
+            "src/IMG_svg.c",
+            "src/IMG_tif.c",
+            "src/IMG_xcf.c",
+            "src/IMG_xpm.c",
+            "src/IMG_xv.c",
+            "src/IMG_webp.c",
+            "src/IMG_qoi.c",
+            
         }});
     b.installArtifact(lib);
 }
