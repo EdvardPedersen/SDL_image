@@ -22,7 +22,6 @@ pub fn build(b: *std.Build) void {
     lib.addIncludePath(lib_dep.path("src"));
     lib.installHeader(lib_dep.path("include/SDL3_image/SDL_image.h"), "SDL3_image/SDL_image.h");
     lib.root_module.addCMacro("LOAD_BMP", "1");
-    lib.root_module.addCMacro("SAVE_BMP", "1");
     lib.root_module.addCSourceFiles(.{
         .root = lib_dep.path(""), 
         .files = &.{
