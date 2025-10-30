@@ -18,6 +18,14 @@ pub fn build(b: *std.Build) void {
     });
     lib.root_module.linkLibrary(sdl_lib);
 
+    const png_dep = b.dependency("libpng", .{
+        .target = target,
+        .optimize = optimize,
+    });
+    const png_lib = png_dep.artifact("libpng");
+
+    lib.root_module.linkLibrary(png_lib);
+
     lib.addIncludePath(lib_dep.path("include"));
     lib.addIncludePath(lib_dep.path("src"));
     lib.installHeader(lib_dep.path("include/SDL3_image/SDL_image.h"), "SDL3_image/SDL_image.h");

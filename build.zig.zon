@@ -10,6 +10,10 @@
             .url = "git+https://github.com/libsdl-org/SDL_image.git?ref=release-3.2.4#11154afb7855293159588b245b446a4ef09e574f",
             .hash = "N-V-__8AAJB7IgJ65BPSqjqzt7j-5xKDklR0h8c11T60iemj",
         },
+        .libpng = .{
+            .url = "git+https://github.com/EdvardPedersen/libpng.git#ca6f28e039487509bbc14cef94d0e2d2ff1a6f19",
+            .hash = "libpng-0.0.0-hmDjsbwFAABfA3amyvCB8WW3DZ8I7i0H96FPr065-eDK",
+        },
     },
     .fingerprint = 0x7d6df367a49af608, // Changing this has security and trust implications.
     .minimum_zig_version = "0.16.0-dev.747+493ad58ff",
