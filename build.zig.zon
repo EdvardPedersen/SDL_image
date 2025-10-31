@@ -11,8 +11,8 @@
             .hash = "N-V-__8AAJB7IgJ65BPSqjqzt7j-5xKDklR0h8c11T60iemj",
         },
         .libpng = .{
-            .url = "git+https://github.com/EdvardPedersen/libpng.git#9fe43f50c83b289315a076e656ec76831a9304f1",
-            .hash = "libpng-0.0.0-hmDjsV8HAAAm81tlEMKhOG7d0_M4i2w4euV_VvLr-u-T",
+            .url = "git+https://github.com/EdvardPedersen/libpng.git#a2b032d33324e4f9fc49a30c0355d31cc7fddf5a",
+            .hash = "libpng-0.0.0-hmDjsasIAAAfWhsxnq_aleu3fOjZN5FZS7D2PF_uWwQD",
         },
     },
     .fingerprint = 0x7d6df367a49af608, // Changing this has security and trust implications.
